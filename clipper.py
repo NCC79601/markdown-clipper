@@ -54,8 +54,8 @@ for file in markdown_files:
                 content.append(line)
         
         # 将title和content的内容存入新创建的文件夹中
-        file_name = os.path.join(output_dir, file_name, f"{file_name}_slice_{i}.md")
-        with open(file_name, 'w', encoding="utf-8") as f:
+        file_to_save = os.path.join(output_dir, file_name, f"{file_name}_{i}.md")
+        with open(file_to_save, 'w', encoding="utf-8") as f:
             for t in title:
                 f.write("#" * t['level'] + f" {t['name']}\n")
             for c in content:
